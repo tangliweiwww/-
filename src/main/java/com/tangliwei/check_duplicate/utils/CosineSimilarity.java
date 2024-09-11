@@ -27,16 +27,13 @@ public class CosineSimilarity {
         // 预处理文本，得到词数组
         String[] words1 = TextUtils.preprocessText(text1);
         String[] words2 = TextUtils.preprocessText(text2);
-
         // 获取两个文本的词频向量
         Map<String, Integer> freq1 = getWordFrequency(words1);
         Map<String, Integer> freq2 = getWordFrequency(words2);
-
         // 获取词汇表（词频向量中的所有唯一词）
         Set<String> wordSet = new HashSet<>();
         wordSet.addAll(freq1.keySet());
         wordSet.addAll(freq2.keySet());
-
         // 计算余弦相似度
         double dotProduct = 0.0;
         double normA = 0.0;
