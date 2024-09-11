@@ -26,4 +26,13 @@ public class MyTest {
         System.out.println("原文："+s1+"\n"+"测试文件："+s2+"\n"+"重复率："+CosineSimilarities);
         FileUtils.WriteToFile("test2.txt: "+CosineSimilarities,"data/result.txt");
     }
+
+    @Test
+    public void testDemo2() {
+        String s1 = FileUtils.ReadFile("data/test1.txt");
+        String s2 = FileUtils.ReadFile("data/test2.txt");
+        String CosineSimilarities = CosineSimilarity.cosineSimilarity(s1, s2);
+        System.out.println("原文："+s1+"\n"+"测试文件："+s2+"\n"+"重复率："+CosineSimilarities);
+        FileUtils.WriteToFile("test2.txt: "+CosineSimilarities,"data/result.txt");
+    }
 }

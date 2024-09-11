@@ -7,12 +7,12 @@ public class FileUtils {
     public static void WriteToFile(String data,String filename)  {
         try (FileWriter fileWriter = new FileWriter(filename,true )){
             fileWriter.write("\n"+data);
-            System.out.println("写入成功!");
+            System.out.println(filename+"写入成功!");
         }catch (FileNotFoundException e){
-            System.err.println("文件路径不存在"+e.getMessage());
+            System.err.println("文件路径不存在"+e);
         }
         catch (IOException e) {
-            System.err.println("写入文件出错"+e.getMessage());
+            System.err.println("写入文件出错"+e);
         }
     }
 
@@ -26,9 +26,9 @@ public class FileUtils {
                stringBuilder.append(line);
            }
         } catch (FileNotFoundException e) {
-            System.err.println("文件路径不存在"+e.getMessage());
+            System.err.println("文件路径不存在"+e);
         } catch (IOException e) {
-            System.err.println("读取文件出错"+e.getMessage());
+            System.err.println("读取文件出错"+e);
         }
         return stringBuilder.toString();
     }
