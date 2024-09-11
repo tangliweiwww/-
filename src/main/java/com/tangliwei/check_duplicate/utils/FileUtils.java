@@ -5,8 +5,8 @@ import java.io.*;
 public class FileUtils {
 
     public static void WriteToFile(String data,String filename)  {
-        try (FileWriter fileWriter = new FileWriter(filename)){
-            fileWriter.write(data);
+        try (FileWriter fileWriter = new FileWriter(filename,true )){
+            fileWriter.write("\n"+data);
             System.out.println("写入成功!");
         }catch (FileNotFoundException e){
             System.err.println("文件路径不存在"+e.getMessage());
